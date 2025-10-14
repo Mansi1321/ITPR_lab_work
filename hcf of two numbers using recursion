@@ -1,0 +1,28 @@
+import java.util.Scanner;
+
+public class HCF {
+
+    // Recursive method to calculate HCF using Euclidean algorithm
+    public static int findHCF(int a, int b) {
+        if (b == 0) {
+            return a; // Base case
+        } else {
+            return findHCF(b, a % b); // Recursive call
+        }
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter first number: ");
+        int num1 = scanner.nextInt();
+
+        System.out.print("Enter second number: ");
+        int num2 = scanner.nextInt();
+
+        int hcf = findHCF(num1, num2);
+        System.out.println("HCF of " + num1 + " and " + num2 + " is: " + hcf);
+
+        scanner.close();
+    }
+}
