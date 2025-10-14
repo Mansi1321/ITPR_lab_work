@@ -1,0 +1,30 @@
+import java.util.Scanner;
+
+public class NaturalNumbers {
+
+    // Recursive method to print natural numbers from 1 to n
+    public static void printNaturalNumbers(int n) {
+        if (n == 0) {
+            return; // Base case: stop when n is 0
+        }
+
+        printNaturalNumbers(n - 1); // Recursive call
+        System.out.print(n + " ");  // Print after recursive call to get 1 to n
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter a positive integer: ");
+        int num = scanner.nextInt();
+
+        if (num <= 0) {
+            System.out.println("Please enter a positive number.");
+        } else {
+            System.out.println("Natural numbers from 1 to " + num + ":");
+            printNaturalNumbers(num);
+        }
+
+        scanner.close();
+    }
+}
